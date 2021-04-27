@@ -1,8 +1,9 @@
 import React from 'react';
 import styles from './Column.scss';
-import Card from '../Card/Card'
-import Creator from '../Creator/Creator'
-import {settings} from '../../data/dataStore'
+import Card from '../Card/Card';
+import Creator from '../Creator/Creator';
+import {settings} from '../../data/dataStore';
+import Icon from '../Icon/Icon';
 import PropTypes from 'prop-types';
 
 
@@ -24,6 +25,7 @@ class Column extends React.Component {
               {
                 key: state.cards.length ? state.cards[state.cards.length-1].key+1 : 0,
                 title,
+                icon: 'list-alt',
               }
             ]
           }
@@ -35,6 +37,7 @@ class Column extends React.Component {
         <section className={styles.component}>
             <h3 className={styles.title}>
             {this.props.title}
+            <span className={styles.icon}> <Icon name={this.props.icon}/> </span>
             </h3>
             <div className={styles.cards}>
                 {this.state.cards.map(({key, ...cardProps}) => (
