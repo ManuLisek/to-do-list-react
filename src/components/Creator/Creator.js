@@ -40,6 +40,7 @@ class Creator extends React.Component {
       value: '',
       visibleButtons: false
     });
+    window.confirm('Do you really want to cancel?');
   }
 
   render() {
