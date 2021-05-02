@@ -11,7 +11,13 @@ class Column extends React.Component {
 
     static propTypes = {
         title: PropTypes.string,
+        icon: PropTypes.string,
+        cards: PropTypes.array,
     }
+
+    static defaultProps = {
+        icon: settings.defaultColumnIcon,
+      }
 
     render(){
         const {title, icon, cards} = this.props;
